@@ -1,6 +1,6 @@
-,image_id,pred,votes_a,votes_b,votes_c
-0,img_001,cat,10,5,2
-1,img_002,dog,15,10,1
-2,img_003,bird,7,3,0
-3,img_004,cat,20,8,3
-4,img_005,dog,5,2,1
+image_id,pred,votes_a,votes_b,votes_c
+img_001,cat,14,5,2
+img_002,dog,15,10,1
+img_003,bird,7,3,0
+img_004,cat,20,8,3
+img_005,dog,5,2,1
