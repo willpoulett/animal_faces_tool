@@ -1,6 +1,6 @@
 image_id,pred,user_vote_0,user_vote_1,user_votes_0,user_votes_1
 0,Wildlife,,,Cat,Dog
-1,Cat,,,Dog,Cat
+1,Cat,,,Cat,Cat
 2,Dog,,,,
 3,Wildlife,,,,
 4,Cat,,,,
