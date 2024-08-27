@@ -3,25 +3,28 @@ from bokeh.models import ColumnDataSource, HoverTool, BoxSelectTool, CustomJS, S
 from bokeh.layouts import column, row
 from bokeh.models.widgets import Div, Button
 from IPython.display import display, HTML
+from bokeh.transform import factor_mark
 
 def RISE_tool(
         coordinates_list,
         image_paths,
-        labels,
+        predictions,
         colours, 
         DR_techniques,
+        markers,
     ):
 
     # Create a ColumnDataSource
-    source = ColumnDataSource(data=dict(x=coordinates_list[0]['x'], y=coordinates_list[0]['y'], images=image_paths, colours=colours, label = labels))
+    source = ColumnDataSource(data=dict(x=coordinates_list[0]['x'], y=coordinates_list[0]['y'], images=image_paths, colours=colours, predictions = predictions, markers=markers))
 
     # Create a figure
     p = figure(plot_width=600, plot_height=400, tools="")
 
     # Add scatter renderer
-    p.scatter('x', 'y', size=5, source=source, color = "colours", legend_field = "label")
+    p.scatter('x', 'y', size=5, source=source, color = "colours", legend_field = "predictions", marker="markers")
     p.legend.title = "Prediction"
     p.add_layout(p.legend[0], 'right')
+
 
     # Create a HoverTool with custom HTML to display the image
     hover = HoverTool(tooltips="""
